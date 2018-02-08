@@ -1,5 +1,7 @@
 # Dockerized Webserver Project 
-
+#
+| Components |
+| ------ |
 | Nginx/Nasxi/SSL container |
 | Varnish cache container |
 | Nginx web server container |
