@@ -1,0 +1,102 @@
+version: "3.1"
+
+services:
+    ssl:
+        container_name: ssl
+        restart: always
+        image: labdocodigo/ssl
+        # build:
+        #     context: .
+        #     dockerfile: "./build/ssl/Dockerfile"
+        volumes:
+            - "./config/ssl/nginx.conf:/etc/nginx/nginx.conf"
+            - "./config/ssl/mime.types:/etc/nginx/mime.types"
+            - "./config/ssl/default.conf:/etc/nginx/conf.d/default.conf"
+            - "./config/ssl/key/:/etc/ssl/"
+            - "./config/ssl/naxsi_core.rules:/etc/nginx/naxsi_core.rules"
+            - "./config/ssl/naxsi.rules:/etc/nginx/naxsi.rules"
+            - "./log/ssl/:/var/log/nginx/"
+            - "./src/:/var/www/html/"
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - varnish
+            - web
+        depends_on:
+            - varnish
+            - web
+
+    varnish:
+        container_name: varnish
+        restart: always
+        image: labdocodigo/varnish
+        # build:
+        #     context: .
+        #     dockerfile: "./build/varnish/Dockerfile"
+        volumes:
+            - "./config/varnish:/etc/default/varnish"
+            - "./config/varnish/default.vcl:/etc/varnish/default.vcl"
+        links:
+            - web
+        depends_on:
+            - web
+
+    web:
+        container_name: web
+        restart: always
+        image: labdocodigo/web
+        # build:
+        #     context: .
+        #     dockerfile: "./build/web/Dockerfile"
+        volumes:
+            - "./config/web/nginx.conf:/etc/nginx/nginx.conf"
+            - "./config/web/mime.types:/etc/nginx/mime.types"
+            - "./config/web/default.conf:/etc/nginx/conf.d/default.conf"
+            - "./log/web/:/var/log/nginx/"
+            - "./src/:/var/www/html/"
+        depends_on:
+            - php
+            - mariadb
+            - redis
+
+    php:
+        container_name: php
+        restart: always
+        image: labdocodigo/php
+        # build:
+        #     context: .
+        #     dockerfile: "./build/php/Dockerfile"
+        volumes:
+            - "./config/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
+            - "./config/php/php-fpm.conf:/usr/local/etc/php-fpm.conf"
+            - "./config/php/docker.conf:/usr/local/etc/php-fpm.d/docker.conf"
+            - "./config/php/www.conf:/usr/local/etc/php-fpm.d/www.conf"
+            - "./config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf"
+            - "./log/php/:/var/log/"
+            - "./src/:/var/www/html/"
+
+    mariadb:
+        container_name: mariadb
+        restart: always
+        image: mariadb:10.3.4
+        environment:
+            - MYSQL_ROOT_PASSWORD=Jeremias3374
+            - MYSQL_DATABASE=superhype
+            - MYSQL_USER=superhype
+            - MYSQL_PASSWORD=Jeremias3374
+        volumes:
+            - "./config/mariadb/:/etc/mysql/"
+            - "mariadb:/var/lib/mysql/"
+        ports:
+            - "3306:3306"
+
+    redis:
+        container_name: redis
+        restart: always
+        image: redis:4.0.7-alpine
+        volumes:
+            - "./config/redis/redis.conf:/usr/local/etc/redis/redis.conf"
+
+volumes:
+    mariadb:

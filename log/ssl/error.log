@@ -1,0 +1,31 @@
+2018/02/02 15:50:44 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 15:50:44 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 15:50:44 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 15:50:45 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 15:56:38 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 15:56:38 [error] 5#5: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 16:26:25 [error] 6#6: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 16:26:25 [error] 6#6: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 16:26:25 [error] 6#6: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 16:45:24 [error] 7#7: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 17:03:53 [error] 8#8: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 17:45:08 [error] 8#8: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 17:45:08 [error] 8#8: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://172.18.0.6:6081/", host: "localhost"
+2018/02/02 18:08:58 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:09:01 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:29:56 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:29:59 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:45:59 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:01 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:03 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:12 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:14 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:17 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:22 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:30 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 18:46:44 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 19:01:52 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 19:01:55 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/02 19:01:57 [emerg] 1#1: host not found in upstream "varnish" in /etc/nginx/conf.d/default.conf:47
+2018/02/08 15:38:15 [error] 6#6: *6 NAXSI_FMT: ip=172.18.0.1&server=localhost&uri=/&learning=1&vers=0.55.3&total_processed=9&total_blocked=1&block=1&cscore0=$SQL&score0=16&cscore1=$XSS&score1=8&zone0=ARGS&id0=1007&var_name0=asd&zone1=ARGS&id1=1302&var_name1=asd, client: 172.18.0.1, server: localhost, request: "GET /?asd=%3C----- HTTP/1.1", host: "localhost"
+2018/02/08 15:39:42 [error] 6#6: *20 NAXSI_FMT: ip=172.18.0.1&server=localhost&uri=/&learning=1&vers=0.55.3&total_processed=10&total_blocked=2&block=1&cscore0=$SQL&score0=16&cscore1=$XSS&score1=8&zone0=ARGS&id0=1007&var_name0=asd&zone1=ARGS&id1=1302&var_name1=asd, client: 172.18.0.1, server: localhost, request: "GET /?asd=%3C----- HTTP/1.1", host: "localhost"
