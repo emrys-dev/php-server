@@ -91,6 +91,16 @@ RUN apk add --update --no-cache openldap-dev \
     && docker-php-ext-configure ldap --with-libdir=lib/ \
     && docker-php-ext-install ldap
 
+# phalcon
+ENV PHALCON_VERSION=3.2.4
+
+RUN curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
+    && cd cphalcon-${PHALCON_VERSION}/build \
+    && ./install \
+    && cp ../tests/_ci/phalcon.ini $(php-config --configure-options | grep -o "with-config-file-scan-dir=\([^ ]*\)" | awk -F'=' '{print $2}') \
+    && cd ../../ \
+    && rm -r cphalcon-${PHALCON_VERSION}
+
 # log file
 RUN touch /var/log/php-fpm.log \
     && chmod 777 /var/log/php-fpm.log
