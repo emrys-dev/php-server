@@ -9,7 +9,8 @@ RUN apk add --update --no-cache bash
 
 # nginx version
 ENV NGINX_VERSION=1.13.3 \
-    NAXSI_VERSION=0.55.3
+    NAXSI_VERSION=0.55.3 \
+    HEADERS_VERSION=0.33
 
 # nginx
 RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
@@ -19,6 +20,7 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
         --modules-path=/usr/lib/nginx/modules \
         --conf-path=/etc/nginx/nginx.conf \
         --add-module=../naxsi-$NAXSI_VERSION/naxsi_src/ \
+        --add-module=../headers-more-nginx-module-$HEADERS_VERSION/ \
         --error-log-path=/var/log/nginx/error.log \
         --http-log-path=/var/log/nginx/access.log \
         --pid-path=/var/run/nginx.pid \
@@ -91,11 +93,14 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
     gpg --batch --verify nginx.tar.gz.asc nginx.tar.gz \
     && rm -r "$GNUPGHOME" nginx.tar.gz.asc \
     && curl -fSL https://github.com/nbs-system/naxsi/archive/$NAXSI_VERSION.tar.gz -o naxsi.tar.gz \
+    && curl -fSL https://github.com/openresty/headers-more-nginx-module/archive/v$HEADERS_VERSION.tar.gz -o headers_more.tar.gz \
     && mkdir -p /usr/src \
     && tar -zxC /usr/src -f nginx.tar.gz \
     && rm nginx.tar.gz \
     && tar -zxC /usr/src -f naxsi.tar.gz \
     && rm naxsi.tar.gz \
+    && tar -zxC /usr/src -f headers_more.tar.gz \
+    && rm headers_more.tar.gz \
     && cd /usr/src/nginx-$NGINX_VERSION \
     && ./configure $CONFIG --with-debug \
     && make -j$(getconf _NPROCESSORS_ONLN) \
