@@ -35,5 +35,9 @@
 - Content-Security-Policy
 - Upload folder security
 - Phalcon skeleton
+- Class load
+- PHP HTTP filters
 - Varnish cache headers
 - Log rotate
+- Daemons system
+- Web service system
