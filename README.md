@@ -7,7 +7,8 @@
 - Redis container
 
 # Generate Certificates:
-> sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /mnt/d/Projects/webserver/ssl/nginx.key -out /mnt/d/Projects/webserver/ssl/nginx.crt  
+> sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /mnt/d/Projects/webserver/ssl/nginx.key -out /mnt/d/Projects/webserver/ssl/nginx.crt
+
 > sudo openssl dhparam -out /mnt/d/Projects/webserver/ssl/nginx.pem 4096
 
 # Build and pull SSL image:
