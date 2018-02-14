@@ -32,7 +32,7 @@
 > docker push labdocodigo/php:latest
 
 # TODO
-- 404/50x security
+- Content-Security-Policy
 - Upload folder security
 - Phalcon skeleton
 - Varnish cache headers
