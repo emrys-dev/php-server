@@ -1,11 +1,10 @@
 # Dockerized Webserver Project 
-#
-| Nginx/Nasxi/SSL container |
-| Varnish cache container |
-| Nginx web server container |
-| PHP-FPM 7.2+ container |
-| Mariadb container |
-| Redis container |
+- Nginx/Nasxi/SSL container
+- Varnish cache container
+- Nginx web server container
+- PHP-FPM 7.2+ container
+- Mariadb container
+- Redis container
 
 # Generate Certificates:
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /mnt/d/Projects/webserver/ssl/nginx.key -out /mnt/d/Projects/webserver/ssl/nginx.crt
