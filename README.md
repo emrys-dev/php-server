@@ -12,24 +12,28 @@
 > sudo openssl dhparam -out /mnt/d/Projects/webserver/ssl/nginx.pem 4096
 
 # Build and pull SSL image:
-> docker build -t labdocodigo/ssl:latest .  
+> docker build -t labdocodigo/ssl:latest .
+
 > docker push labdocodigo/ssl:latest
 
 # Build and pull VARNISH image:
-> docker build -t labdocodigo/varnish:latest .  
+> docker build -t labdocodigo/varnish:latest .
+
 > docker push labdocodigo/varnish:latest
 
 # Build and pull WEB image:
-> docker build -t labdocodigo/web:latest .  
+> docker build -t labdocodigo/web:latest .
+
 > docker push labdocodigo/web:latest
 
 # Build and pull PHP image:
-> docker build -t labdocodigo/php:latest .  
+> docker build -t labdocodigo/php:latest .
+
 > docker push labdocodigo/php:latest
 
 # TODO
-- Upload folder security
 - 404/50x security
+- Upload folder security
 - Phalcon skeleton
 - Varnish cache headers
 - Log rotate
