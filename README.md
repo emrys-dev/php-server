@@ -1,5 +1,6 @@
 # Dockerized Webserver Project 
 #
+| |
 | ------ |
 | Nginx/Nasxi/SSL container |
 | Varnish cache container |
@@ -31,3 +32,4 @@ docker push labdocodigo/php:latest
 # TODO
 - Upload folder security
 - 404/50x security
+- Phalcon skeleton
