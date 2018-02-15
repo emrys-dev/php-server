@@ -32,7 +32,7 @@
 > docker push labdocodigo/php:latest
 
 # TODO
-- Content-Security-Policy
+- Content-Security-Policy whitelist
 - Upload folder security
 - Phalcon skeleton
 - Class load
