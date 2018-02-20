@@ -55,12 +55,6 @@ RUN docker-php-source extract \
     && docker-php-ext-install redis \
     && docker-php-source delete
 
-# apcu
-RUN docker-php-source extract \
-    && pecl install apcu \
-    && docker-php-ext-enable apcu \
-    && docker-php-source delete
-
 # imagick
 RUN apk add --update --no-cache imagemagick-dev \
     && pecl install imagick \

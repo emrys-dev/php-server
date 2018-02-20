@@ -320,7 +320,7 @@ sub vcl_backend_response {
 
   # Set 2min cache if unset for static files
   if (beresp.ttl <= 0s || beresp.http.Set-Cookie || beresp.http.Vary == "*") {
-    set beresp.ttl = 60s; # Important, you shouldn't rely on this, SET YOUR HEADERS in the backend
+    set beresp.ttl = 120s; # Important, you shouldn't rely on this, SET YOUR HEADERS in the backend
     set beresp.uncacheable = true;
     return (deliver);
   }
