@@ -31,8 +31,15 @@
 
 > docker push labdocodigo/php:latest
 
+# COMMANDS
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker system prune -a
+
 # TODO
 - Content-Security-Policy whitelist
+- Remove unnecessary logs
+- Create .shs to restart services inside containers
 - Upload folder security
 - Phalcon skeleton
 - Class load
