@@ -60,6 +60,9 @@ sub vcl_recv {
 	# Normalize the query arguments
 	set req.url = std.querysort(req.url);
 
+	# Make Varnish actually deliver the grace header in the response
+	set req.http.grace = "none";
+
 	# Allow purging
 	if (req.method == "PURGE") {
 		if (!client.ip ~ purge) { # purge is the ACL defined at the begining
@@ -191,7 +194,7 @@ sub vcl_recv {
 # degrade into a simple TCP proxy, shuffling bytes back and forth. For a connection in pipe mode,
 # no other VCL subroutine will ever get called after vcl_pipe.
 sub vcl_pipe {
-	# set bereq.http.Connection = "Close";
+	set bereq.http.Connection = "Close";
 
 	# Implementing websocket support (https://www.varnish-cache.org/docs/4.0/users-guide/vcl-example-websockets.html)
 	if (req.http.upgrade) {
@@ -331,6 +334,9 @@ sub vcl_backend_response {
 # Last chance to modify headers that are sent to the client
 # Called before a cached object is delivered to the client.
 sub vcl_deliver {
+	# Copy the grace header from the request object
+	set resp.http.grace = req.http.grace;
+
 	if (obj.hits > 0) { # Add debug header to see if it's a HIT/MISS and the number of hits, disable when not needed
 		set resp.http.X-Cache = "HIT";
 	}
