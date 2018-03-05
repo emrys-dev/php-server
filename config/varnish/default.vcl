@@ -14,7 +14,7 @@ backend default {
 
 	.probe = {
 		.request =
-			"HEAD / HTTP/1.1"
+			"HEAD /index.php HTTP/1.1"
 			"Host: localhost"
 			"Connection: close"
 			"User-Agent: Varnish Health Probe";

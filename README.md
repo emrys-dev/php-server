@@ -35,16 +35,17 @@
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker system prune -a
+docker exec -it ssl nginx -s reload
+docker exec -it web nginx -s reload
+docker exec -it varnish bash -x /etc/init.d/varnishd reload
 
 # TODO
-- Content-Security-Policy whitelist
-- Remove unnecessary logs
-- Create .shs to restart services inside containers
-- Upload folder security
 - Phalcon skeleton
+- Upload folder security
 - Class load
 - PHP HTTP filters
 - Varnish cache headers
 - Log rotate
+- Database
 - Daemons system
 - Web service system
