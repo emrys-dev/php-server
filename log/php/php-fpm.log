@@ -34,3 +34,87 @@
 [05-Mar-2018 14:06:15 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/../app/config/config.php' (include_path='.:/usr/local/lib/php') in /var/www/html/index.php on line 10
 [05-Mar-2018 14:06:15 UTC] PHP Stack trace:
 [05-Mar-2018 14:06:15 UTC] PHP   1. {main}() /var/www/html/index.php:0
+[22-Mar-2018 20:49:05 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:05 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:05 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:05 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:05 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:05 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:10 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:10 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:10 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:10 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:10 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:10 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:12 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:12 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:12 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:12 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:12 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:12 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:15 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:15 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:15 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:15 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:15 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:15 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:20 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:20 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:20 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:20 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:20 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:20 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:25 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:25 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:25 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:25 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:25 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:25 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:30 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:30 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:30 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:30 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:30 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:30 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:35 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:35 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:35 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:35 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:35 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:35 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:40 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:40 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:40 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:40 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:40 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:40 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:45 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:45 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:45 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:45 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:45 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:45 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:50 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:50 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:50 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:50 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:50 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:50 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:55 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:55 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:55 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:49:55 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:49:55 UTC] PHP Stack trace:
+[22-Mar-2018 20:49:55 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:50:00 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:50:00 UTC] PHP Stack trace:
+[22-Mar-2018 20:50:00 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:50:00 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:50:00 UTC] PHP Stack trace:
+[22-Mar-2018 20:50:00 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:50:05 UTC] PHP Warning:  require(/var/www/html/public/../app/configs/service.php): failed to open stream: No such file or directory in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:50:05 UTC] PHP Stack trace:
+[22-Mar-2018 20:50:05 UTC] PHP   1. {main}() /var/www/html/public/index.php:0
+[22-Mar-2018 20:50:05 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/html/public/../app/configs/service.php' (include_path='.:/usr/local/lib/php') in /var/www/html/public/index.php on line 13
+[22-Mar-2018 20:50:05 UTC] PHP Stack trace:
+[22-Mar-2018 20:50:05 UTC] PHP   1. {main}() /var/www/html/public/index.php:0

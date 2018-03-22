@@ -1,33 +1,35 @@
 <?php
 
+use Phalcon\Mvc\Application;
+
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 try {
 
-	/**
-	 * Read the configuration
-	 */
-	$config = require __DIR__ . "/../app/config/config.php";
+    /**
+     * Include services
+     */
+    require __DIR__ . '/../app/configs/services.php';
 
-	/**
-	 * Include loader
-	 */
-	require __DIR__ . '/../app/config/loader.php';
+    /**
+     * Handle the request
+     */
+    $application = new Application();
 
-	/**
-	 * Include services
-	 */
-	require __DIR__ . '/../app/config/services.php';
+    /**
+     * Assign the DI
+     */
+    $application->setDI($di);
 
-	/**
-	 * Handle the request
-	 */
-	$application = new \Phalcon\Mvc\Application();
-	$application->setDI($di);
-	echo $application->handle()->getContent();
+    /**
+     * Include modules
+     */
+    require __DIR__ . '/../app/configs/modules.php';
 
+    echo $application->handle()->getContent();
 } catch (Phalcon\Exception $e) {
-	echo $e->getMessage();
-} catch (PDOException $e){
-	echo $e->getMessage();
+    echo $e->getMessage();
+} catch (PDOException $e) {
+    echo $e->getMessage();
 }
