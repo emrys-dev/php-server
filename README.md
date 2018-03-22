@@ -38,6 +38,9 @@ docker system prune -a
 docker exec -it ssl nginx -s reload
 docker exec -it web nginx -s reload
 docker exec -it varnish bash -x /etc/init.d/varnishd reload
+git add *
+git commit -m "New itens"
+git push origin master
 
 # TODO
 - Phalcon skeleton
