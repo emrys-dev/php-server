@@ -1,5 +1,0 @@
-172.18.0.1 - - [26/Mar/2018:19:58:27 +0000] "GET / HTTP/1.1" 200 117 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-172.18.0.1 - - [26/Mar/2018:19:58:31 +0000] "GET /site HTTP/1.1" 200 83 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-172.18.0.1 - - [26/Mar/2018:19:59:36 +0000] "GET /site HTTP/1.1" 200 83 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-172.18.0.1 - - [26/Mar/2018:19:59:39 +0000] "GET /sites HTTP/1.1" 200 84 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-172.18.0.1 - - [26/Mar/2018:19:59:44 +0000] "GET / HTTP/1.1" 200 117 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
