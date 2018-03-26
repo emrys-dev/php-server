@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Models\Entities;
 
 use Phalcon\Mvc\Model;

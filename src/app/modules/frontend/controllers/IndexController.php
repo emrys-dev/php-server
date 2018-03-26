@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Modules\Frontend\Controllers;
 
 use Modules\Models\Services\Services;
@@ -10,7 +9,8 @@ class IndexController extends ControllerBase
     {
         try {
             $this->view->users = Services::getService('User')->getLast();
-        } catch (\Exception $e) {
+        }
+        catch (\Exception $e) {
             $this->flash->error($e->getMessage());
         }
     }

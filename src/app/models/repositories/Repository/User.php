@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Models\Repositories\Repository;
 
 use Modules\Models\Entities\User as EntityUser;

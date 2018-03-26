@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Modules\Frontend\Controllers;
+namespace Modules\Modules\Dashboard\Controllers;
 
 use Phalcon\Mvc\Controller;
 

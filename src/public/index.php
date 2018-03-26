@@ -6,7 +6,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 try {
-
     /**
      * Include services
      */
@@ -28,8 +27,10 @@ try {
     require __DIR__ . '/../app/configs/modules.php';
 
     echo $application->handle()->getContent();
-} catch (Phalcon\Exception $e) {
+}
+catch (Phalcon\Exception $e) {
     echo $e->getMessage();
-} catch (PDOException $e) {
+}
+catch (PDOException $e) {
     echo $e->getMessage();
 }

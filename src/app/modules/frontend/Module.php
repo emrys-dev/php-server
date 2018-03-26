@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Modules\Frontend;
 
 use Phalcon\Loader;
@@ -19,14 +18,12 @@ class Module implements ModuleDefinitionInterface
     {
         $loader = new Loader();
 
-        $loader->registerNamespaces(
-            [
-                'Modules\Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
-                'Modules\Models\Entities' => __DIR__ . '/../../models/entities/',
-                'Modules\Models\Services' => __DIR__ . '/../../models/services/',
-                'Modules\Models\Repositories' => __DIR__ . '/../../models/repositories/'
-            ]
-        );
+        $loader->registerNamespaces([
+            'Modules\Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
+            'Modules\Models\Entities' => __DIR__ . '/../../models/entities/',
+            'Modules\Models\Services' => __DIR__ . '/../../models/services/',
+            'Modules\Models\Repositories' => __DIR__ . '/../../models/repositories/'
+        ]);
 
         $loader->register();
     }
@@ -57,14 +54,12 @@ class Module implements ModuleDefinitionInterface
          * Database connection is created based in the parameters defined in the configuration file
          */
         $di['db'] = function () use ($config) {
-            return new DbAdapter(
-                [
-                    "host" => $config->database->host,
-                    "username" => $config->database->username,
-                    "password" => $config->database->password,
-                    "dbname" => $config->database->dbname
-                ]
-            );
+            return new DbAdapter([
+                "host" => $config->database->host,
+                "username" => $config->database->username,
+                "password" => $config->database->password,
+                "dbname" => $config->database->dbname
+            ]);
         };
     }
 }

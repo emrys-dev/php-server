@@ -27,6 +27,8 @@ $di['router'] = function () {
     
     $router->removeExtraSlashes(true);
 
+    // TODO add routes
+
     return $router;
 };
 
