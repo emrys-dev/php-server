@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Modules\Dashboard\Controllers;
+namespace App\Modules\Dashboard\Controllers;
 
 use Modules\Models\Services\Services;
 

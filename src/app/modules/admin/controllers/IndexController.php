@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Modules\Admin\Controllers;
+namespace App\Modules\Admin\Controllers;
 
 use Modules\Models\Services\Services;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Modules\Frontend;
+namespace App\Modules\Frontend;
 
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
@@ -19,7 +19,7 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces([
-            'Modules\Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
+            'App\Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
             'Modules\Models\Entities' => __DIR__ . '/../../models/entities/',
             'Modules\Models\Services' => __DIR__ . '/../../models/services/',
             'Modules\Models\Repositories' => __DIR__ . '/../../models/repositories/'

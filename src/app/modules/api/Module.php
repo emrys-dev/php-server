@@ -1,8 +1,7 @@
 <?php
-namespace App\Modules\Admin;
+namespace App\Modules\Api;
 
 use Phalcon\Loader;
-use Phalcon\Mvc\View;
 use Phalcon\DiInterface;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
@@ -19,7 +18,7 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces([
-            'App\Modules\Admin\Controllers' => __DIR__ . '/controllers/',
+            'App\Modules\Api\Controllers' => __DIR__ . '/controllers/',
             'Modules\Models\Entities' => __DIR__ . '/../../models/entities/',
             'Modules\Models\Services' => __DIR__ . '/../../models/services/',
             'Modules\Models\Repositories' => __DIR__ . '/../../models/repositories/'
@@ -44,10 +43,7 @@ class Module implements ModuleDefinitionInterface
          * Setting up the view component
          */
         $di['view'] = function () {
-            $view = new View();
-            $view->setViewsDir(__DIR__ . '/views/');
-
-            return $view;
+            return new \Phalcon\Mvc\View();
         };
 
         /**

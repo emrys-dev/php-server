@@ -17,17 +17,72 @@ $di = new FactoryDefault();
  * Registering a router
  */
 $di['router'] = function () {
-
     $router = new Router();
 
+    // Defaults
+    $router->setDefaultNamespace("App\Modules\Frontend\Controllers");
     $router->setDefaultModule("frontend");
-    $router->setDefaultNamespace("Modules\Modules\Frontend\Controllers");
-    
+    $router->setDefaultController("index");
+    $router->setDefaultAction("index");
     $router->setUriSource(\Phalcon\Mvc\Router::URI_SOURCE_SERVER_REQUEST_URI);
-    
     $router->removeExtraSlashes(true);
 
-    // TODO add routes
+    // Modules
+    $modules = [
+        'frontend' => array(
+            'prefix' => '',
+            'namespace' => 'Frontend'
+        ),
+        'dashboard' => array(
+            'prefix' => '/dashboard',
+            'namespace' => 'Dashboard'
+        ),
+        'admin' => array(
+            'prefix' => '/admin',
+            'namespace' => 'Admin'
+        ),
+        'api' => array(
+            'prefix' => '/api',
+            'namespace' => 'Api'
+        )
+    ];
+
+    // Add all routes
+    foreach ($modules as $moduleName => $module) {
+        $prefix = $module['prefix'];
+        $namespace = $module['namespace'];
+
+        $namespaceName = 'App\Modules\\' . $namespace . '\Controllers';
+
+        $router->add("{$prefix}(/)?", [
+            'namespace'  => $namespaceName,
+            'module'     => $moduleName,
+            'controller' => 'index',
+            'action'     => 'index',
+        ]);
+
+        $router->add("{$prefix}/:controller(/)?", [
+            'namespace'  => $namespaceName,
+            'module'     => $moduleName,
+            'controller' => 1,
+            'action'     => 'index',
+        ]);
+
+        $router->add("{$prefix}/:controller/:action(/)?", [
+            'namespace'  => $namespaceName,
+            'module'     => $moduleName,
+            'controller' => 1,
+            'action'     => 2,
+        ]);
+
+        $router->add("{$prefix}/:controller/:action/:params(/)?", [
+            'namespace'  => $namespaceName,
+            'module'     => $moduleName,
+            'controller' => 1,
+            'action'     => 2,
+            'params'     => 3,
+        ]);
+    }
 
     return $router;
 };
