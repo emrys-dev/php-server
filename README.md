@@ -45,10 +45,9 @@ git push origin master
 # TODO
 - Phalcon skeleton
 - Upload folder security
-- Class load
 - PHP HTTP filters
 - Varnish cache headers
 - Log rotate
 - Database
-- Daemons system
 - Web service system
+- Daemons system

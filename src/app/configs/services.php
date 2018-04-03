@@ -17,13 +17,11 @@ $di = new FactoryDefault();
  * Registering a router
  */
 $di['router'] = function () {
-    $router = new Router();
+    $router = new Router(false);
 
     // Defaults
     $router->setDefaultNamespace("App\Modules\Frontend\Controllers");
     $router->setDefaultModule("frontend");
-    $router->setDefaultController("index");
-    $router->setDefaultAction("index");
     $router->setUriSource(\Phalcon\Mvc\Router::URI_SOURCE_SERVER_REQUEST_URI);
     $router->removeExtraSlashes(true);
 
@@ -51,22 +49,24 @@ $di['router'] = function () {
     foreach ($modules as $moduleName => $module) {
         $prefix = $module['prefix'];
         $namespace = $module['namespace'];
-
+        
         $namespaceName = 'App\Modules\\' . $namespace . '\Controllers';
 
-        $router->add("{$prefix}(/)?", [
-            'namespace'  => $namespaceName,
-            'module'     => $moduleName,
-            'controller' => 'index',
-            'action'     => 'index',
-        ]);
-
-        $router->add("{$prefix}/:controller(/)?", [
-            'namespace'  => $namespaceName,
-            'module'     => $moduleName,
-            'controller' => 1,
-            'action'     => 'index',
-        ]);
+        if (in_array($moduleName, array('frontend', 'dashboard', 'admin'))) {
+            $router->add("{$prefix}(/)?", [
+                'namespace'  => $namespaceName,
+                'module'     => $moduleName,
+                'controller' => 'index',
+                'action'     => 'index',
+            ]);
+        
+            $router->add("{$prefix}/:controller(/)?", [
+                'namespace'  => $namespaceName,
+                'module'     => $moduleName,
+                'controller' => 1,
+                'action'     => 'index',
+            ]);
+        }
 
         $router->add("{$prefix}/:controller/:action(/)?", [
             'namespace'  => $namespaceName,
