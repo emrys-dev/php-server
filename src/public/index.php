@@ -35,11 +35,6 @@ try {
      * Handle application
      */
     $response = $application->handle();
-
-    /**
-     * Handle response
-     */
-    require __DIR__ . '/../app/configs/response.php';
     
     /**
      * Get the content
