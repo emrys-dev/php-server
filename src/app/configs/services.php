@@ -16,13 +16,13 @@ $di = new FactoryDefault();
 /**
  * Registering a router
  */
-$di['router'] = function () {
+$di['router'] = function() {
     $router = new Router(false);
 
     // Defaults
     $router->setDefaultNamespace("App\Modules\Frontend\Controllers");
     $router->setDefaultModule("frontend");
-    $router->setUriSource(\Phalcon\Mvc\Router::URI_SOURCE_SERVER_REQUEST_URI);
+    $router->setUriSource(\Phalcon\Mvc\Router::URI_SOURCE_GET_URL);
     $router->removeExtraSlashes(true);
 
     // Modules
@@ -45,7 +45,7 @@ $di['router'] = function () {
         )
     ];
 
-    // Add all routes
+    // Add all default routes
     foreach ($modules as $moduleName => $module) {
         $prefix = $module['prefix'];
         $namespace = $module['namespace'];
@@ -83,6 +83,55 @@ $di['router'] = function () {
             'params'     => 3,
         ]);
     }
+
+    // Not found routes
+    $router->add("/nao-encontrado/:params(/)?", [
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'notFound',
+        'params'     => 1
+    ]);
+
+    $router->add("/not-found/:params(/)?", [
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'notFound',
+        'params'     => 1
+    ]);
+
+    $router->notFound(array(
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'notFound'
+    ));
+
+    // Server error routes
+    $router->add("/ocorreu-um-problema/:params(/)?", [
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'serverError',
+        'params'     => 1
+    ]);
+
+    $router->add("/a-problem-occurred/:params(/)?", [
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'serverError',
+        'params'     => 1
+    ]);
+
+    $router->add("/ops/:params(/)?", [
+        'namespace'  => 'App\Modules\Frontend\Controllers',
+        'module'     => 'frontend',
+        'controller' => 'Error',
+        'action'     => 'serverError',
+        'params'     => 1
+    ]);
 
     return $router;
 };

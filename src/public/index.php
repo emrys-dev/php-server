@@ -26,7 +26,25 @@ try {
      */
     require __DIR__ . '/../app/configs/modules.php';
 
-    echo $application->handle()->getContent();
+    /**
+     * Include dispatcher
+     */
+    require __DIR__ . '/../app/configs/dispatcher.php';
+
+    /**
+     * Handle application
+     */
+    $response = $application->handle();
+
+    /**
+     * Handle response
+     */
+    require __DIR__ . '/../app/configs/response.php';
+    
+    /**
+     * Get the content
+     */
+    echo $response->getContent();
 }
 catch (Phalcon\Exception $e) {
     echo $e->getMessage();
