@@ -5,9 +5,6 @@ services:
         container_name: ssl
         restart: always
         image: labdocodigo/ssl
-        build:
-            context: .
-            dockerfile: "./build/ssl/Dockerfile"
         volumes:
             - "./config/ssl/nginx.conf:/etc/nginx/nginx.conf"
             - "./config/ssl/mime.types:/etc/nginx/mime.types"
@@ -31,9 +28,6 @@ services:
         container_name: varnish
         restart: always
         image: labdocodigo/varnish
-        build:
-            context: .
-            dockerfile: "./build/varnish/Dockerfile"
         volumes:
             - "./config/varnish:/etc/default/varnish"
             - "./config/varnish/default.vcl:/etc/varnish/default.vcl"
@@ -46,9 +40,6 @@ services:
         container_name: web
         restart: always
         image: labdocodigo/web
-        build:
-            context: .
-            dockerfile: "./build/web/Dockerfile"
         volumes:
             - "./config/web/nginx.conf:/etc/nginx/nginx.conf"
             - "./config/web/mime.types:/etc/nginx/mime.types"
@@ -64,9 +55,6 @@ services:
         container_name: php
         restart: always
         image: labdocodigo/php
-        build:
-            context: .
-            dockerfile: "./build/php/Dockerfile"
         volumes:
             - "./config/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
             - "./config/php/php-fpm.conf:/usr/local/etc/php-fpm.conf"

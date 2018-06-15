@@ -12,26 +12,29 @@
 > sudo openssl dhparam -out /mnt/d/Projects/webserver/ssl/nginx.pem 4096
 
 # Build and pull SSL image:
-> docker build -t labdocodigo/ssl:latest .
-
+> docker build -t ssl .
+> docker tag ssl labdocodigo/ssl
 > docker push labdocodigo/ssl:latest
 
 # Build and pull VARNISH image:
-> docker build -t labdocodigo/varnish:latest .
-
+> docker build -t varnish .
+> docker tag varnish labdocodigo/varnish
 > docker push labdocodigo/varnish:latest
 
 # Build and pull WEB image:
-> docker build -t labdocodigo/web:latest .
-
+> docker build -t web .
+> docker tag web labdocodigo/web
 > docker push labdocodigo/web:latest
 
 # Build and pull PHP image:
-> docker build -t labdocodigo/php:latest .
-
+> docker build -t php .
+> docker tag php labdocodigo/php
 > docker push labdocodigo/php:latest
 
 # COMMANDS
+docker images
+docker ps (docker container ls)
+docker-compose up -d
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker system prune -a
