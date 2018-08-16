@@ -28,7 +28,7 @@ RUN apk add --update --no-cache libintl icu icu-dev libxml2-dev \
 
 # mysqli, pdo, pdo_mysql, pdo_pgsql
 RUN apk add --update --no-cache postgresql-dev \
-    && docker-php-ext-install mysqli pdo pdo_mysql
+    && docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql
 
 # gd, iconv, libltdl
 RUN apk add --update --no-cache \
@@ -84,16 +84,6 @@ RUN pecl install oauth-2.0.2 \
 RUN apk add --update --no-cache openldap-dev \
     && docker-php-ext-configure ldap --with-libdir=lib/ \
     && docker-php-ext-install ldap
-
-# phalcon
-ENV PHALCON_VERSION=3.2.4
-
-RUN curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
-    && cd cphalcon-${PHALCON_VERSION}/build \
-    && ./install \
-    && cp ../tests/_ci/phalcon.ini $(php-config --configure-options | grep -o "with-config-file-scan-dir=\([^ ]*\)" | awk -F'=' '{print $2}') \
-    && cd ../../ \
-    && rm -r cphalcon-${PHALCON_VERSION}
 
 # log file
 RUN touch /var/log/php-fpm.log \

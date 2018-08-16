@@ -3,8 +3,7 @@
 - Varnish cache container
 - Nginx web server container
 - PHP-FPM 7.2+ container
-- Mariadb container
-- Redis container
+- PerconaDB container
 
 # Generate Certificates:
 > sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /mnt/d/Projects/webserver/ssl/nginx.key -out /mnt/d/Projects/webserver/ssl/nginx.crt
@@ -35,9 +34,12 @@
 docker images
 docker ps (docker container ls)
 docker-compose up -d
+docker-compose down
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 docker system prune -a
+docker network ls
+docker network rm
 docker exec -it ssl nginx -s reload
 docker exec -it web nginx -s reload
 docker exec -it varnish bash -x /etc/init.d/varnishd reload
@@ -46,7 +48,6 @@ git commit -m "New itens"
 git push origin master
 
 # TODO
-- Phalcon skeleton
 - Upload folder security
 - PHP HTTP filters
 - Varnish cache headers

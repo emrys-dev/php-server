@@ -48,8 +48,6 @@ services:
             - "./src/:/var/www/html/"
         depends_on:
             - php
-            - mariadb
-            - redis
 
     php:
         container_name: php
@@ -63,28 +61,24 @@ services:
             - "./config/php/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf"
             - "./log/php/:/var/log/"
             - "./src/:/var/www/html/"
+        links:
+            - postgresql
+        depends_on:
+            - postgresql
 
-    mariadb:
-        container_name: mariadb
+    postgresql:
+        container_name: postgresql
         restart: always
-        image: mariadb:10.3.4
+        image: postgres:11-alpine
         environment:
-            - MYSQL_ROOT_PASSWORD=Jeremias3374
-            - MYSQL_DATABASE=superhype
-            - MYSQL_USER=superhype
-            - MYSQL_PASSWORD=Jeremias3374
+            - POSTGRES_DB=superhype
+            - POSTGRES_USER=superhype
+            - POSTGRES_PASSWORD=Jeremias3374
         volumes:
-            - "./config/mariadb/:/etc/mysql/"
-            - "mariadb:/var/lib/mysql/"
+            - "./config/postgresql/:/etc/postgresql/"
+            - "postgresql:/var/lib/postgresql/data/"
         ports:
-            - "3306:3306"
-
-    redis:
-        container_name: redis
-        restart: always
-        image: redis:4.0.7-alpine
-        volumes:
-            - "./config/redis/redis.conf:/usr/local/etc/redis/redis.conf"
+            - "5432:5432"
 
 volumes:
-    mariadb:
+    postgresql:
